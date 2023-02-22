@@ -29,10 +29,10 @@ module Pluto::Format::JPEG
       )
       LibJPEGTurbo.destroy(handle)
 
-      red = Array.new(width * height) { 0u8 }
-      green = Array.new(width * height) { 0u8 }
-      blue = Array.new(width * height) { 0u8 }
-      alpha = Array.new(width * height) { 255u8 }
+      red = Array.new(width * height, 0u8)
+      green = Array.new(width * height, 0u8)
+      blue = Array.new(width * height, 0u8)
+      alpha = Array.new(width * height, 255u8)
       pixels = buffer.each_slice(3).to_a
 
       (width * height).times do |index|

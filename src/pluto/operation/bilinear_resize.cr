@@ -8,7 +8,7 @@ module Pluto::Operation::BilinearResize
     y_ratio = height > 1 ? (@height - 1) / (height - 1) : 0
 
     each_channel do |channel, channel_type|
-      resized_channel = Array.new(width * height) { 0u8 }
+      resized_channel = Array.new(width * height, 0u8)
 
       height.times do |h|
         width.times do |w|

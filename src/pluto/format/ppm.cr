@@ -7,10 +7,10 @@ module Pluto::Format::PPM
       _maximum_color_value = io.gets("\n", chomp: true)
 
       if width && height
-        red = Array.new(width * height) { 0u8 }
-        green = Array.new(width * height) { 0u8 }
-        blue = Array.new(width * height) { 0u8 }
-        alpha = Array.new(width * height) { 255u8 }
+        red = Array.new(width * height, 0u8)
+        green = Array.new(width * height, 0u8)
+        blue = Array.new(width * height, 0u8)
+        alpha = Array.new(width * height, 255u8)
 
         (width * height).times do |index|
           red_byte = io.read_byte
